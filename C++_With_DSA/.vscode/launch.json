@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": ".",
-      "program": "build/Debug/outDebug",
+      "cwd": "/media/toni-birat/New Volume/Rust_C++_Learning_DSA/C++_With_DSA/Apna_College_Basics",
+      "program": "/media/toni-birat/New Volume/Rust_C++_Learning_DSA/C++_With_DSA/Apna_College_Basics/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
