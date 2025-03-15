@@ -7,7 +7,7 @@ int variable_assignment() {
     int second_number = 20;
     int sum = first_number + second_number;
 
-    cout << "The sume of " << first_number << " and " << second_number << " is " << sum << endl;
+    cout << "The sum of " << first_number << " and " << second_number << " is " << sum << endl;
     cout << sizeof(sum) << endl;
     cout << sizeof(first_number) << endl;
     cout << sizeof(second_number) << endl;
