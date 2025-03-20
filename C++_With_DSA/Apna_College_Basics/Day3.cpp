@@ -2,7 +2,6 @@
 using namespace std;
 
 // Square Pattern
-
 void sqr_pat_123() {
 
     int rows = 4;
