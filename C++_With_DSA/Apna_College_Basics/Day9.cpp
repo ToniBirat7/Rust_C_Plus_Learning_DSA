@@ -3,8 +3,19 @@
 #include <limits.h>
 using namespace std;
 
-void kadanesAlgorithm() {
+int kadanesAlgorithm(vector<int>& nums) {
 
+	int maxSum = INT_MIN;
+	int currSum = 0;
+
+	for(int num : nums) {
+		currSum += num;
+		maxSum = max(currSum, maxSum);
+		if(currSum < 0) {
+			currSum = 0;
+		}
+	}
+	return maxSum;
 }
 
 void maximumSubarraySumBruteForceO3(vector<int>& nums) {
@@ -69,6 +80,8 @@ int main() {
 
 	vector<int> arr = {-2,1,-3,4,-1,2,1,-5,4};
 
+	// vector<int> arr = {-1,-2,-3,-4,-5}; All Negative
+
 	cout << "Brute Force O(n^3)" << endl;
 
 	maximumSubarraySumBruteForceO3(arr);
@@ -76,4 +89,10 @@ int main() {
 	cout << "Brute Force O(n^2)" << endl;
 
 	maximumSubarraySumBruteForceO2(arr);
+
+	cout << "Kadane's Algorithm O(n)" << endl;
+
+	int maxSum = kadanesAlgorithm(arr);
+
+	cout << "Max Sum is " << maxSum << endl;
 };
