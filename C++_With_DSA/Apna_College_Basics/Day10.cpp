@@ -104,6 +104,55 @@ int majorityElementSort(vector<int>& arr2) {
 	return -1;
 }
 
+int majorityElementMooresAlgot(vector<int>& nums) {
+	int freq = 0, ans = 0;
+
+	for(int i: nums) {
+		if (freq == 0) {
+			ans = i;
+		}
+		if (ans == i) {
+			freq++;
+		}
+		else {
+			freq--;
+		}
+	}
+
+	return ans;
+}
+
+int majorityElementMooresAlgoVariation(vector<int>& nums) {
+	int freq = 0, ans = 0;
+	int size = nums.size() / 2;
+
+	for(int i: nums) {
+		if (freq == 0) {
+			ans = i;
+		}
+		if (ans == i) {
+			freq++;
+		}
+		else {
+			freq--;
+		}
+	}
+
+	int count = 0;
+	for(int i : nums) {
+		if(i == ans) {
+			count++;
+		}
+	}
+
+	if(count > size) {
+		return ans;
+	}
+
+	return -1;
+
+}
+
 int main() {
 	int target = 9;
 
@@ -144,6 +193,14 @@ int main() {
 	int elementSort = majorityElementSort(arr2);
 
 	cout << elementSort;
+
+	cout << endl;
+
+	cout << "Majority Element Moores Approach, below is the number:" << endl;
+
+	int elementMoores = majorityElementMooresAlgot(arr2);
+
+	cout << elementMoores;
 
 	cout << endl;
 	
