@@ -31,11 +31,28 @@ int bestTimeToSell(vector<int>& prices) {
 			}
 			bestBuy = min(bestBuy,prices[i]);
 	}
-
 	return maxP;
 }
 
+// Handle Edge Cases 
+
+int selfTryBestBuy(vector<int>& prices) {
+	int bestBuy = prices[0];
+	int maxProfit = 0;
+
+	for(int i = 1; i <= prices.size(); i++) {
+		bestBuy = min(bestBuy, i);
+		maxProfit = max((i - bestBuy), maxProfit);
+
+		cout << bestBuy << " " << maxProfit << endl;
+	}
+
+	return maxProfit;
+}
+
 int main() {
+
+	vector<int> stockPrices = {7,1,5,3,6,4};
 
 	cout << "We are performing Binary Exponential Problem" << endl;
 
@@ -43,4 +60,7 @@ int main() {
 
 	cout << "The answer is " << ans << endl;
 
+	int maxProfit = selfTryBestBuy(stockPrices);
+
+	cout << "The Max Profit is " << maxProfit << endl;
 }
