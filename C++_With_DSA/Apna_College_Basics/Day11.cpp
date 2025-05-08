@@ -75,40 +75,33 @@ int bestBuySell(vector<int> &prices)
 	return maxi;
 }
 
-// int selfTryMaxContainer(vector<int> &height)
-// {
-// 	int maxContainer = INT_MIN;
-// 	int step = 0;
-// 	int size = height.size();
-// 	int startIndex;
-
-// 	for (int item : height)
-// 	{
-// 		int diff = step * item;
-// 		if (diff > maxContainer)
-// 		{
-// 			maxContainer = max(diff, maxContainer);
-// 			startIndex = (size - step) - 1;
-// 		}
-// 		step++;
-// 		cout << "Step " << step << " Max Container " << maxContainer << " Starting Element " << height[startIndex] << endl;
-// 	}
-
-// 	return maxContainer;
-// }
-
-int selfTryMaxContainer(vector<int> &height)
+int selfTryMaxContainerFailed(vector<int> &height)
 {
 	int maxContainer = INT_MIN;
-	int step = 0;
+	int step = -1;
 
-	for (int item : height)
+	for (int i = 0; i < height.size(); i++)
 	{
-		maxContainer = max(step * item, maxContainer);
-		cout << "Step " << step << " Max Container " << maxContainer << endl;
+		maxContainer = max(step * height[i], maxContainer);
 		step++;
 	}
+	return maxContainer;
+}
 
+int twoPointerMaxContainer(vector<int> &height)
+{
+	int maxContainer = INT_MIN;
+	int lp = 0, rp = height.size() - 1;
+
+	while (lp < rp)
+	{
+		int w = rp - lp;
+		int ht = min(height[lp], height[rp]);
+
+		maxContainer = max(maxContainer, w * ht);
+
+		height[lp] < height[rp] ? lp++ : rp--;
+	}
 	return maxContainer;
 }
 
@@ -133,7 +126,13 @@ int main()
 
 	cout << endl;
 
-	int maxContainer = selfTryMaxContainer(heightArr);
+	int maxContainer = selfTryMaxContainerFailed(heightArr);
 
-	cout << "The Max Container is " << maxContainer << endl;
+	cout << "The Max Container Self Try is " << maxContainer << endl;
+
+	int maxContainerTwoPointer = twoPointerMaxContainer(heightArr);
+
+	cout << endl;
+
+	cout << "The Max Container Two Pointer is " << maxContainerTwoPointer << endl;
 }
