@@ -4,7 +4,7 @@ using namespace std;
 
 // Pointers : Variables that store the address of another variable
 
-int nullPointerExample()
+int *nullPointerExample()
 {
   int *ptr = nullptr; // Pointer initialized to null
   if (ptr == nullptr)
@@ -70,6 +70,17 @@ int main()
   cout << endl;
 
   // Checking for null pointer
-  nullPointerExample();
+  int *nPtr = nullPointerExample();
+  if (nPtr == nullptr)
+  {
+    cout << "Null pointer received." << endl;
+  }
+
+  int newAge = 25;
+  nPtr = &newAge; // Assigning the address of 'newAge' to a pointer
+
+  cout << "Age: " << newAge << endl;             // Output: 25
+  cout << "Pointer to age: " << nPtr << endl;    // Output: Address of 'newAge'
+  cout << "Value at pointer: " << *nPtr << endl; // Output: 25
   return 0;
 }
