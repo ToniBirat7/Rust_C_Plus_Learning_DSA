@@ -43,6 +43,23 @@ void careful_consideration_type_casting()
   cout << "After " << celcius2 << endl;
 }
 
+void type_casting_problem_solving()
+{
+  // Print the integer and the fractional part
+
+  double weight = 10.99;
+
+  cout << "Integer Part : " << static_cast<int>(weight) << endl;
+
+  cout << "Fractional Part : " << static_cast<int>((weight - static_cast<int>(weight)) * 1000) << endl;
+
+  // If we only substract it is still float and we want up to 4 decimal place so we multiply by 1000 and then cast to int
+
+  // Output :
+  // Integer Part : 10
+  // Fractional Part : 989
+}
+
 int main()
 {
 
@@ -55,6 +72,12 @@ int main()
   cout << "Carefule Consideration" << endl;
 
   careful_consideration_type_casting();
+
+  cout << "Problem Solving" << endl;
+
+  cout << endl;
+
+  type_casting_problem_solving();
 
   return 0;
 }
