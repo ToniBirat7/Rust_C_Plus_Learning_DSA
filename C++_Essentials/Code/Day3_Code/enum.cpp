@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+// Learning Enum
+
 enum class asset
 {
   TEXTURE,
