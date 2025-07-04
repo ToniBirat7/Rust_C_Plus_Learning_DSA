@@ -29,12 +29,32 @@ void self_cast()
   cout << "Player X (uint) after conversion to signed 32 bit int " << static_cast<int32_t>(player_x) << endl;
 }
 
+void careful_consideration_type_casting()
+{
+  int fahrenheit = 100;
+
+  float celcius = (5 / 9) * fahrenheit; // It is integer division, so 0 i.e. Int
+
+  cout << "Before " << celcius << endl;
+
+  // In the expressions, there should be at least one variable with the float type
+  float celcius2 = (static_cast<float>(5) / 9) * fahrenheit;
+
+  cout << "After " << celcius2 << endl;
+}
+
 int main()
 {
 
   // Type Cast Funcs
 
   self_cast();
+
+  cout << endl;
+
+  cout << "Carefule Consideration" << endl;
+
+  careful_consideration_type_casting();
 
   return 0;
 }
