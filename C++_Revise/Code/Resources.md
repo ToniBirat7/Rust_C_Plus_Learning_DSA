@@ -1,3 +1,5 @@
 ## **LinkedIn Learning Resources**
 
-[C++_OpenEDG_](https://www.linkedin.com/learning/paths/c-plus-plus-programming-professional-certificate-by-openedg-c-plus-plus-institute?u=42288921)
+[C++\_Getting_Started](https://www.linkedin.com/learning/paths/getting-started-with-c-plus-plus?u=42288921)
+
+[Master_C++](https://www.linkedin.com/learning/paths/master-c-plus-plus?u=42288921)
