@@ -9,6 +9,7 @@ int main()
   // To dereference, cast the pointer back to float*
   float actualHealth = *(static_cast<float *>(genericPointer));
 
+  cout << " After Deferencing " << actualHealth << endl;
   // Or alternatively
   float enemyHealth = *(float *)genericPointer;
 }
