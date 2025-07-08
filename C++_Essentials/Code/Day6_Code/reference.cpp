@@ -2,11 +2,11 @@
 #include <vector>
 using namespace std;
 
+// Implementation of Reference
 void implementReference()
 {
   int age = 20;
-
-  int &trackAge = age;
+  int &trackAge = age; //
 
   cout << "Address of A is : " << &age << endl;
   cout << "Address of B is : " << &trackAge << endl;
@@ -17,6 +17,17 @@ void implementReference()
   cout << "Value of B after is : " << trackAge << endl;
 }
 
+// Use of references in for loop, this function modifies the original vector
+
+void modifyVector(vector<int> &vec)
+{
+  for (int &num : vec)
+  {           // Using reference to modify original elements
+    num *= 2; // Doubling each element
+  }
+}
+
+// Function to check what are not considered as references
 void check_ref()
 {
 
@@ -40,6 +51,8 @@ void check_ref()
 
   cout << "Address of first Vect is : " << &points << endl;
   cout << "Address of second Vect is : " << &secondPoints << endl;
+
+  cout << endl;
 }
 
 // Vector for complex numbers
@@ -54,6 +67,25 @@ int main()
 
   // Reference implementation
   implementReference();
+
+  cout << endl;
+
+  // Modify the original vector
+
+  vector<int> numbers = {1, 2, 3, 4, 5};
+  cout << "Before modification: ";
+  for (int num : numbers)
+  {
+    cout << num << " "; // Output: 1 2 3 4 5
+  }
+  cout << endl;
+  modifyVector(numbers); // Passing vector by reference
+  cout << "After modification: ";
+  for (int num : numbers)
+  {
+    cout << num << " "; // Output: 2 4 6 8 10
+  }
+  cout << endl;
 
   return 0;
 }
