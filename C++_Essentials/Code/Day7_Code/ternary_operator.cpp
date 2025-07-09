@@ -8,6 +8,8 @@ int main()
   string name = "Birat";
   bool result = (mathGrade > 10) ? true : false;
 
-  cout << "Student " << name << "is " << result ? "Pass" : "Faile";
+  cout << "Student " << name << " is " << (result ? "Pass" : "Fail");
+  cout << endl;
+
   return 0;
 }
