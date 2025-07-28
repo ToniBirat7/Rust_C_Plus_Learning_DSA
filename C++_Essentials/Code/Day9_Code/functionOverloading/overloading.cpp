@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string>
 using namespace std;
 
 // Speed of player
@@ -15,7 +14,7 @@ int getSpeed(double time)
 }
 
 // Overloaded function to get the speed in the specific format
-int getSpeed(int distance, int time, const string &unit)
+string getSpeed(int distance, int time, const string &unit)
 {
   float speed = distance / (float)time; // Both are int so need to cast
   return to_string(speed) + " " + unit;
@@ -23,6 +22,20 @@ int getSpeed(int distance, int time, const string &unit)
 
 int main()
 {
+  int speedInt;
+  string speedStr;
+
+  speedInt = getSpeed(200, 4); // Call the function with matching parameter
+
+  cout << "Speed (Int)" << speedInt << endl;
+
+  speedInt = getSpeed(4); // Call the function with matching parameter
+
+  cout << "Speed (default distance)" << speedInt << endl;
+
+  speedStr = getSpeed(200, 4, "kilometer per hour"); // Call the function with matching parameter
+
+  cout << "Speed (default distance)" << speedStr << endl;
 
   return 0;
 }
