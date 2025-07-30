@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
-#include <algorithm> // For searching
+#include <algorithm> // For searching, find() method
+#include <stdexcept> // required for std::runtime_error
 using namespace std;
 
 // Class definition
@@ -13,16 +14,14 @@ private:
 
 public:
   // Default Constructor
-  Inventory()
+  Inventory() : capacity(10) // Member Initializer List
   {
-    capacity = 10;
     items = new vector<string>(); // Dynamic Memory Allocation in Heap
   }
 
   // Overloaded Constructor
-  Inventory(int capacity)
+  Inventory(int capacity_i) : capacity(capacity_i)
   {
-    this->capacity = capacity;
     items = new vector<string>();
   }
 
@@ -41,7 +40,7 @@ public:
     }
     else
     {
-      cout << "Inventory is full, cannot add " << value << endl;
+      throw runtime_error("Inventory is full, cannot add");
     }
   }
 
@@ -90,5 +89,61 @@ public:
 
 int main()
 {
+  // Instantiate an Object
+  Inventory myInventory(5); // Overloaded constructor with capacity of 5
+
+  // Display Current Inventory
+  cout << "Current Contents are : " << endl;
+  cout << endl;
+
+  myInventory.displayContent();
+
+  // Add elements
+  myInventory.addItem("Birat");
+  myInventory.addItem("Biratt");
+  myInventory.addItem("Birattt");
+  myInventory.addItem("Biratttt");
+  myInventory.addItem("Birattttt");
+
+  cout << "Added to Full Capacity" << endl;
+
+  // Add another item when full
+  try
+  {
+    cout << "Trying to add beyond capacity";
+    myInventory.addItem("Birattttt");
+  }
+  catch (const out_of_range &e)
+  {
+    cout << "Error: " << e.what() << endl;
+  }
+
+  // Remove an item
+  cout << "Remove Birat" << endl;
+  myInventory.removeItem("Birattttt");
+
+  // Display an item count
+  cout << "There are total of : " << myInventory.getItemCount() << endl;
+
+  // Access item by index
+  cout << "Accessing Birat by Index" << endl;
+  cout << "The item in Index 0 is : " << myInventory.getItem(0) << endl;
+
+  // Access out of range
+  try
+  {
+    cout << "Accessing the Element of Index 10" << endl;
+    string item = myInventory.getItem(10);
+  }
+  catch (const runtime_error &e)
+  {
+    cout << "Error : " << e.what() << endl;
+  }
+
+  // Display after CRUD
+  cout << "Content Afer CRUD : " << endl;
+  cout << endl;
+  myInventory.displayContent();
+
   return 0;
 }
