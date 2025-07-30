@@ -12,6 +12,27 @@ private:
   int capacity;          // Max capacity
 
 public:
+  // Default Constructor
+  Inventory()
+  {
+    capacity = 10;
+    items = new vector<string>(); // Dynamic Memory Allocation in Heap
+  }
+
+  // Overloaded Constructor
+  Inventory(int capacity)
+  {
+    this->capacity = capacity;
+    items = new vector<string>();
+  }
+
+  // Destructor
+  ~Inventory()
+  {
+    delete items; // Prevent memory leaks by deallocating the dynamic vector
+  }
+
+public:
   void addItem(const string &value) // item is an alias that points to the string variable that will be passed
   {
     if (items->size() < capacity) // Dereferencing the pointer to use the method, we could have used (*items).size() as well
@@ -55,4 +76,19 @@ public:
   {
     return items->size();
   }
+
+  void displayContent() const
+  {
+    cout << "Inventor [ ";
+    for (string item : *items)
+    {
+      cout << item;
+    }
+    cout << " ]" << endl;
+  }
 };
+
+int main()
+{
+  return 0;
+}
