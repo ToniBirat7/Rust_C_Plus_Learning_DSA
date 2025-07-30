@@ -81,7 +81,7 @@ public:
     cout << "Inventor [ ";
     for (string item : *items)
     {
-      cout << item;
+      cout << item << " ";
     }
     cout << " ]" << endl;
   }
@@ -110,10 +110,10 @@ int main()
   // Add another item when full
   try
   {
-    cout << "Trying to add beyond capacity";
+    cout << "Trying to add beyond capacity \n";
     myInventory.addItem("Birattttt");
   }
-  catch (const out_of_range &e)
+  catch (const runtime_error &e)
   {
     cout << "Error: " << e.what() << endl;
   }
@@ -135,7 +135,7 @@ int main()
     cout << "Accessing the Element of Index 10" << endl;
     string item = myInventory.getItem(10);
   }
-  catch (const runtime_error &e)
+  catch (const out_of_range &e)
   {
     cout << "Error : " << e.what() << endl;
   }
