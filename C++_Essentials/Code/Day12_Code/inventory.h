@@ -17,20 +17,23 @@ public:
   ~Inventory();
 
   // Add item to the inventory
-  void addItem(const std::string &item);
+  Inventory &operator+=(const std::string &item); // += because it is our operation is unary
 
   // Remove item from the inventory
-  void removeItem(const std::string &item);
+  Inventory &operator-=(const std::string &item);
 
   // Get item count
   int getItemCount() const;
 
   // Get item by index
+  std::string operator[](int index) const;
+
+  // Display
   void displayItems() const;
 
 private:
-  std::vector<std::string> items; // Vector to store items
-  int capacity;                   // Maximum capacity of the inventory
+  std::vector<std::string> *items; // Vector to store items
+  int capacity;                    // Maximum capacity of the inventory
 };
 
 #endif // INVENTORY_H

@@ -8,51 +8,73 @@ using namespace std;
 
 Inventory::Inventory() : capacity(10) // Default constructor
 {
-  items = vector<string>(); // Initialize the vector
+  items = new vector<string>(); // The pointer is stored in the Stack, and Vector object is stored in the Heap
 }
+
 Inventory::Inventory(int capacity_i) : capacity(capacity_i) // Overloaded constructor
 {
-  items = vector<string>(); // Initialize the vector
+  items = new vector<string>(); // Initialize the vector
 }
+
 Inventory::~Inventory() // Destructor
 {
-  // No need to manually deallocate the vector as it will be automatically destroyed
+  delete items;
 }
-void Inventory::addItem(const string &item) // Add item to the inventory
+
+// Overloaded with +=
+Inventory &Inventory::operator+=(const string &item) // Add item to the inventory
 {
-  if (items.size() < capacity)
+  if (items->size() < capacity)
   {
-    items.push_back(item);
+    items->push_back(item);
   }
   else
   {
     cout << "Inventory is full, cannot add " << item << endl;
   }
+
+  return *this;
 }
 
-void Inventory::removeItem(const string &item) // Remove item from the inventory
+// Overloaded with -=
+Inventory &Inventory::operator-=(const string &item) // Remove item from the inventory
 {
-  auto it = find(items.begin(), items.end(), item);
-  if (it != items.end())
+  auto it = find(items->begin(), items->end(), item);
+  if (it != items->end())
   {
-    items.erase(it);
+    items->erase(it);
   }
   else
   {
     cout << "Item " << item << " not found in inventory." << endl;
   }
+
+  return *this;
 }
 
 int Inventory::getItemCount() const // Get item count
 {
-  return items.size();
+  return items->size();
 }
 
 void Inventory::displayItems() const // Display all items
 {
   cout << "Inventory items:" << endl;
-  for (const auto &item : items)
+  for (const auto &item : *items)
   {
     cout << "- " << item << endl;
+  }
+}
+
+// Overload with [] to access the element
+string Inventory::operator[](int index) const
+{ // Const correctness is used to prevent the method from modifying any properties and methods
+  if (index >= 0 && index < items->size())
+  {
+    return (*items)[index];
+  }
+  else
+  {
+    throw out_of_range("Index out of range");
   }
 }
