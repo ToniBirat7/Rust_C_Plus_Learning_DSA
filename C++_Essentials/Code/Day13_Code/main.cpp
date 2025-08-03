@@ -1,4 +1,5 @@
 #include "Item.h"
+#include "Weapon.h"
 #include <memory>
 #include <iostream>
 
@@ -6,6 +7,12 @@ using namespace std;
 
 int main()
 {
+
+  // Create Item Object
+
+  cout << "We are Creating Item Clas Obejct" << endl;
+
+  cout << endl;
 
   // Create an Object in the Heap
   // Item *sword = new Item("Steel Sword", 10); // This way we can forget to delete the Sword leading to memory leaks
@@ -25,6 +32,21 @@ int main()
 
   // If we use Heap with Pointer to create object
   // delete sword;
+
+  // Create Weapon Object
+
+  cout << "We are Creating Weapon Clas Obejct" << endl;
+
+  cout << endl;
+
+  // On the heap with smart pointer
+  unique_ptr<Item> arrow = make_unique<Weapon>("Arrow", 10, 100);
+
+  // Dispaly weapon details
+  arrow->display();
+
+  // Use the arrow
+  arrow->use();
 
   return 0;
 }
