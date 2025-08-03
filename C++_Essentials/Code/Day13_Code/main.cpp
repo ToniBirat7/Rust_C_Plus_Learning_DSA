@@ -2,6 +2,7 @@
 #include "Weapon.h"
 #include "Ammo.h"
 #include "Aid.h"
+#include "Valuable.h"
 #include <memory>
 #include <iostream>
 
@@ -75,6 +76,21 @@ int main()
 
   // On the heap with smart pointer
   unique_ptr<Item> firstAid = make_unique<Aid>("First Aid Kit", 10, 100);
+
+  // Dispaly weapon details
+  firstAid->display();
+
+  // Use the arrow
+  firstAid->use();
+
+  cout << endl;
+
+  cout << "We are Creating Valuable Clas Obejct" << endl;
+
+  cout << endl;
+
+  // On the heap with smart pointer
+  unique_ptr<Item> firstAid = make_unique<Valuable>("Coin", 10, 100);
 
   // Dispaly weapon details
   firstAid->display();
