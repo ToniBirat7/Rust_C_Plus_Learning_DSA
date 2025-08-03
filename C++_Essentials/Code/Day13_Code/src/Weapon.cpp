@@ -5,7 +5,6 @@ using namespace std;
 
 Weapon::Weapon(const string &weaponName, int weaponWeight, int weaponDamage) : Item(weaponName, weaponWeight), damage(weaponDamage)
 {
-  cout << "Object created with Name : " << name << "and Weight : " << weight << endl;
 }
 
 void Weapon::use() const
@@ -15,5 +14,5 @@ void Weapon::use() const
 
 void Weapon::display() const
 {
-  cout << "Weapon " << name << ",Weight " << damage << ",Damage" << damage << endl;
+  cout << "Weapon, " << name << " Weight, " << damage << " Damage, " << damage << endl;
 }

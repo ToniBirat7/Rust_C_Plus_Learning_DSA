@@ -8,7 +8,7 @@ using namespace std;
 // Constructor
 Item::Item(const string &itemName, int itemWeight) : name(itemName), weight(itemWeight)
 {
-  cout << "Object created with Name : " << name << "and Weight : " << weight << endl;
+  cout << "Object created with Name : " << name << " and Weight : " << weight << endl;
 }
 
 // Destructor

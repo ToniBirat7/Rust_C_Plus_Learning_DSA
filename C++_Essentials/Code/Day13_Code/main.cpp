@@ -30,6 +30,8 @@ int main()
   std::cout << "Name: " << sword->getName() << std::endl;
   std::cout << "Weight: " << sword->getWeight() << std::endl;
 
+  cout << endl;
+
   // If we use Heap with Pointer to create object
   // delete sword;
 
@@ -47,6 +49,8 @@ int main()
 
   // Use the arrow
   arrow->use();
+
+  cout << endl;
 
   return 0;
 }
