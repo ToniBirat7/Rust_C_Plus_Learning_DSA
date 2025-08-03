@@ -5,6 +5,7 @@
 #include "Valuable.h"
 #include <memory>
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -105,7 +106,12 @@ int main()
 
   cout << endl;
 
-  
+  vector<Item *> Inventory; // Vector of item pointers
+
+  Inventory.push_back(new Weapon("Axe", 5, 20));
+  Inventory.push_back(new Ammo("9mm Bullets", 2, 30));
+  Inventory.push_back(new Aid("Medkit", 3, 50));
+  Inventory.push_back(new Valuable("Gold Bar", 10, 100));
 
   return 0;
 }
