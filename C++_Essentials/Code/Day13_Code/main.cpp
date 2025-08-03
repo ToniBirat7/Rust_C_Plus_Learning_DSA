@@ -1,4 +1,5 @@
 #include "header.h"
+#include <memory>
 #include <iostream>
 
 using namespace std;
@@ -7,10 +8,10 @@ int main()
 {
 
   // Create an Object in the Heap
-  Item *sword = new Item("Steel Sword", 10); // This way we can forget to delete the Sword leading to memory leaks
+  // Item *sword = new Item("Steel Sword", 10); // This way we can forget to delete the Sword leading to memory leaks
 
   // Use smart pointers to manage memory automatically
-  
+  unique_ptr<Item> sword = make_unique<Item>();
 
   // Display item details, access with arrow operator
   sword->display();
