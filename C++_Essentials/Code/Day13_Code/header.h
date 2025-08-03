@@ -14,7 +14,7 @@ public:
   // Constructor
   Item(const std::string &itemName, int itemWeight) : name(itemName), weight(itemWeight) {}
 
-  // Virtual Destructure
+  // Virtual Destructure because other classes will inherirt it, to prevent memory leaks Base Class's destructor must be virtual
   virtual ~Item();
 
   // Can be overriden by Derived Class
