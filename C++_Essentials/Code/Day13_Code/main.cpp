@@ -1,5 +1,7 @@
 #include "Item.h"
 #include "Weapon.h"
+#include "Ammo.h"
+#include "Aid.h"
 #include <memory>
 #include <iostream>
 
@@ -49,6 +51,36 @@ int main()
 
   // Use the arrow
   arrow->use();
+
+  cout << endl;
+
+  cout << "We are Creating Ammo Clas Obejct" << endl;
+
+  cout << endl;
+
+  // On the heap with smart pointer
+  unique_ptr<Item> ammo_5_5 = make_unique<Ammo>("5.56mm", 10, 100);
+
+  // Dispaly weapon details
+  ammo_5_5->display();
+
+  // Use the arrow
+  ammo_5_5->use();
+
+  cout << endl;
+
+  cout << "We are Creating Aid Clas Obejct" << endl;
+
+  cout << endl;
+
+  // On the heap with smart pointer
+  unique_ptr<Item> firstAid = make_unique<Aid>("First Aid Kit", 10, 100);
+
+  // Dispaly weapon details
+  firstAid->display();
+
+  // Use the arrow
+  firstAid->use();
 
   cout << endl;
 
