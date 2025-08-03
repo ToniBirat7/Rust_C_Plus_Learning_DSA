@@ -14,6 +14,5 @@ public:
   void use() const override;
 
   // Override the display method
-
   void display() const override;
 };

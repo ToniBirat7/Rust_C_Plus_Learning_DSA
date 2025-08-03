@@ -24,7 +24,7 @@ public:
   std::string getName() const;
 
   // Get Weight
-  int getWeight() const;
+  virtual int getWeight() const;
 
   // Virtual method to display
   virtual void display() const;
