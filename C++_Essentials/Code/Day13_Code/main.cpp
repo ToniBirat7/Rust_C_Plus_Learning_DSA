@@ -90,13 +90,13 @@ int main()
   cout << endl;
 
   // On the heap with smart pointer
-  unique_ptr<Item> firstAid = make_unique<Valuable>("Coin", 10, 100);
+  unique_ptr<Item> value = make_unique<Valuable>("Coin", 10, 100);
 
   // Dispaly weapon details
-  firstAid->display();
+  value->display();
 
   // Use the arrow
-  firstAid->use();
+  value->use();
 
   cout << endl;
 
