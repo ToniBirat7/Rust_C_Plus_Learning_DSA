@@ -11,7 +11,7 @@ int main()
   // Item *sword = new Item("Steel Sword", 10); // This way we can forget to delete the Sword leading to memory leaks
 
   // Use smart pointers to manage memory automatically
-  unique_ptr<Item> sword = make_unique<Item>();
+  unique_ptr<Item> sword = make_unique<Item>("Steel Sword", 10);
 
   // Display item details, access with arrow operator
   sword->display();
@@ -22,6 +22,9 @@ int main()
   // Access individual properties
   std::cout << "Name: " << sword->getName() << std::endl;
   std::cout << "Weight: " << sword->getWeight() << std::endl;
+
+  // If we use Heap with Pointer to create object
+  // delete sword;
 
   return 0;
 }

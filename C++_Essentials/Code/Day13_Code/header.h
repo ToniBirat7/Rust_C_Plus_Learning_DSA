@@ -12,7 +12,7 @@ protected:
 
 public:
   // Constructor
-  Item(const std::string &itemName, int itemWeight) : name(itemName), weight(itemWeight) {}
+  Item(const std::string &itemName, int itemWeight);
 
   // Virtual Destructure because other classes will inherirt it, to prevent memory leaks Base Class's destructor must be virtual
   virtual ~Item();
