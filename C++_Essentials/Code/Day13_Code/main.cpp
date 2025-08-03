@@ -106,12 +106,21 @@ int main()
 
   cout << endl;
 
-  vector<Item *> Inventory; // Vector of item pointers
+  vector<unique_ptr<Item>> Inventory; // Vector of item pointers
 
-  Inventory.push_back(new Weapon("Axe", 5, 20));
-  Inventory.push_back(new Ammo("9mm Bullets", 2, 30));
-  Inventory.push_back(new Aid("Medkit", 3, 50));
-  Inventory.push_back(new Valuable("Gold Bar", 10, 100));
+  Inventory.push_back(sword);    // Weapon Object
+  Inventory.push_back(arrow);    // Ammo Object
+  Inventory.push_back(ammo_5_5); // Aid Object
+  Inventory.push_back(firstAid); // Valuable Object
+
+  // Polymorphic Call
+  for (const auto &item : Inventory)
+  {
+    item->display();
+    item->use();
+
+    cout << endl;
+  }
 
   return 0;
 }
