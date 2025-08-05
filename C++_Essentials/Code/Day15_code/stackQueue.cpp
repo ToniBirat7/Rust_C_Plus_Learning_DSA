@@ -31,7 +31,10 @@ int main()
   // Processing events in the LIFO order
   while (!undoStack.empty())
   {
-    
+    cout << "Undo Action : " << undoStack.top() << endl;
+    cout << endl;
+
+    undoStack.pop();
   }
 
   return 0;
