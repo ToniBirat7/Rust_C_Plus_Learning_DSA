@@ -22,9 +22,17 @@ int main()
     cout << "Current Event is : " << currentEvent << endl;
     cout << endl;
     eventQueue.pop();
+
+    // Let's push the event has been completed in the stack, useful if we want those actions again
+
+    undoStack.push(currentEvent);
   }
 
-  
+  // Processing events in the LIFO order
+  while (!undoStack.empty())
+  {
+    
+  }
 
   return 0;
 }
