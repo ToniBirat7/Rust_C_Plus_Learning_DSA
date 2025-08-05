@@ -18,6 +18,9 @@ int main()
   {
     string currentEvent = eventQueue.front();
     cout << "Current Event is : " << currentEvent << endl;
+    cout << endl;
     eventQueue.pop();
   }
+
+  return 0;
 }
