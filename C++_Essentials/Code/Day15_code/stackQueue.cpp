@@ -7,6 +7,7 @@ using namespace std;
 int main()
 {
   queue<string> eventQueue; // FIFO container for game events
+  stack<string> undoStack;  // LIFO container for undo operations
 
   // Adding event to the queue
   eventQueue.push("Move Forward");
@@ -22,6 +23,8 @@ int main()
     cout << endl;
     eventQueue.pop();
   }
+
+  
 
   return 0;
 }
