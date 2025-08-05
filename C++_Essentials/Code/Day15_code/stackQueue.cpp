@@ -28,6 +28,10 @@ int main()
     undoStack.push(currentEvent);
   }
 
+  cout << "Stack Implementation" << endl;
+
+  cout << endl;
+
   // Processing events in the LIFO order
   while (!undoStack.empty())
   {
