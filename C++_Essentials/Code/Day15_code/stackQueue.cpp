@@ -1,5 +1,6 @@
 #include <iostream>
-#include <queue> // Adaptive Container from Standard Template Library
+#include <queue> // Adaptive Container from the Standard Template Library
+#include <stack> // Adaptive Container from the Standard Template Library
 
 using namespace std;
 
