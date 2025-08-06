@@ -17,7 +17,8 @@ int main()
   vector<pair<string, int>> enemies = {{"Zombie", 100},
                                        {"Mutatnt", 150},
                                        {"Ghoul", 80}};
-  sort(enemies.begin(), enemies.end(), SortByHealth());
+
+  sort(enemies.begin(), enemies.end(), SortByHealth()); // Passing Functor
 
   for (const auto &enemy : enemies)
   {
