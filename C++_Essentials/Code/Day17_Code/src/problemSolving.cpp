@@ -40,5 +40,42 @@ deque<pair<string, int>> ManagePetSchedule(const deque<pair<string, int>> &initi
 
   // Write your code here.
 
+  // Copy the initialActivites in the Schedule
+  for (auto &activity : initialActivities)
+  {
+    schedule.push_back(activity);
+  }
+
+  // For Operations
+  for (auto &item : operations)
+  {
+    switch (item.first)
+    {
+    case Operation::ADD_FRONT:
+      schedule.push_front(item.second);
+      break;
+    case Operation::ADD_BACK:
+      schedule.push_back(item.second);
+      break;
+    case Operation::REMOVE_FRONT:
+      schedule.pop_front();
+      break;
+    default:
+      schedule.pop_back();
+      break;
+    }
+  }
+
   return schedule;
+}
+
+int main()
+{
+  deque<pair<string, int>> initialActivities = {{"Photograph", 20}, {"Play", 45}, {"Sleep", 60}};
+  vector<pair<Operation, pair<string, int>>> operations = {
+      {Operation::REMOVE_FRONT, {"", 0}},
+      {Operation::ADD_FRONT, {"Eat", 15}},
+      {Operation::ADD_BACK, {"Groom", 45}}};
+
+  deque<pair<string, int>> learnerResult = ManagePetSchedule(initialActivities, operations);
 }
