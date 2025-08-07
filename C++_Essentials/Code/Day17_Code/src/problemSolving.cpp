@@ -78,4 +78,9 @@ int main()
       {Operation::ADD_BACK, {"Groom", 45}}};
 
   deque<pair<string, int>> learnerResult = ManagePetSchedule(initialActivities, operations);
+
+  for (const auto &activity : learnerResult)
+  {
+    std::cout << "(" << activity.first << ", " << activity.second << ")\n";
+  }
 }
