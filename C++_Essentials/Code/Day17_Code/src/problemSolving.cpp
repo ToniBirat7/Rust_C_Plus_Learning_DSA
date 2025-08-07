@@ -1,5 +1,4 @@
 // Virtual Pet Schedule
-
 // Problem Link :
 
 // https://www.linkedin.com/learning/complete-guide-to-c-plus-plus-programming-foundations/code-challenges/urn:li:la_assessmentV2:69864423?autoSkip=true&resume=false&u=42288921
@@ -11,11 +10,6 @@
 #include <deque>
 #include <string>
 #include <utility>
-
-// Uncomment these macros to control whether you see
-// the expected result and/or hints.
-// #define showExpectedResult
-// #define showHints
 
 template <typename T>
 using deque = std::deque<T>;
