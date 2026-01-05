@@ -10,10 +10,14 @@
 
 [LinkedIn_Learning_Graph_Explanation](https://www.linkedin.com/learning/data-structures-in-javascript-trees-and-graphs/what-is-a-graph?resume=false&u=42288921
 
-## \*\*DSA with JS (Codevolution)
+## **DSA with JS (Codevolution)**
 
 [DSA_Playlist](https://www.youtube.com/playlist?list=PLC3y8-rFHvwjPxNAKvZpdnsr41E0fCMMP)
 
 ## **Must Do DSA Questions for Tech Placements**
 
 [Must_Do_DSA_Questions_for_Tech_Placements](https://www.youtube.com/watch?v=NzXohHxGkZ0)
+
+## **Best YT Channel for Understanding Game Dev with C++ / Kernels**
+
+[Pikuma_Playlist](https://www.youtube.com/@pikuma/playlists)
