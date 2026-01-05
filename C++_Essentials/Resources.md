@@ -21,3 +21,7 @@
 ## **Best YT Channel for Understanding Game Dev with C++ / Kernels**
 
 [Pikuma_Playlist](https://www.youtube.com/@pikuma/playlists)
+
+## **C++ With Game Dev from Scratch**
+
+[Playlist](https://www.youtube.com/playlist?list=PLnuhp3Xd9PYTt6svyQPyRO_AAuMWGxPzU)
